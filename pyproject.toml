@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multicompress"
+version = "0.1.0"
+description = "A functional CLI for BZip2, LZMA and 7z archives"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Fytahx" }]
+license = { text = "MIT" }
+keywords = ["compression", "bzip2", "lzma", "7z", "archive"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Environment :: Console",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: POSIX",
+]
+
+[project.scripts]
+multicompress = "multicompress.__main__:main"
+multicompress-gui = "multicompress.gui:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
